@@ -1,0 +1,13 @@
+<div class="lists-container">
+	<div class="infinite-width lists">
+		{{#each model as |list|}}
+			{{#trello-list list=list action="addItem"}} {{/trello-list}}
+		{{/each}}
+		<div class="new-list">
+			<form {{action "create" on="submit"}}>
+				{{input type="text" class="form-control" value=listTitle placeholder="List Name"}}
+				{{input type="submit" class="btn btn-success" value="Create List"}}
+			</form>
+		</div>
+	</div>
+</div>
